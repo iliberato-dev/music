@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="disc-container">
+                    <div class="track-art"></div>
+                    <div class="track-info">
+                        <h1 class="track-name">Nome da Música</h1>
+                        <p class="track-artist">Artista</p>
+                    </div>
+                </div>
+                <br>
+                <div class="now-playing" style="text-align: center;">Reproduzindo x de y</div>
+            </div>
+
+            <div class="progress-container"">
+                <div class="time-info">
+                    <span class="current-time">00:00</span>
+                    <span class="total-duration">00:00</span>
+                </div>
+                <input type="range" class="seek_slider" min="0" max="100" value="0" />
+            </div>
+
+            <div class="controls-main" style="margin-top: -2rem;">
+                <div class="buttons">
+                    <button class="control-btn random-track" onclick="randomTrack()" aria-label="Aleatório">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="control-btn prev-track" onclick="prevTrack()" aria-label="Anterior">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="control-btn playpause-track" onclick="playpauseTrack()" aria-label="Play/Pause">
+                        <i class="fas fa-play-circle"></i>
+                    </button>
+                    <button class="control-btn next-track" onclick="nextTrack()" aria-label="Próximo">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="control-btn repeat-track" onclick="repeatTrack()" aria-label="Repetir">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                
+        <div class="playlist-controls">
+            <div class="genre-wrapper">
+                <select id="genre-select" class="genre-select" aria-label="Selecionar gênero">
+                    <option value="">Todos os gêneros</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="classical">Clássica</option>
+                    <option value="electronic">Eletrônica</option>
+                </select>
+                <i class="fas fa-chevron-down select-icon"></i>
+            </div>
+        </div>
+
+                <div class="volume-container">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" class="volume_slider" min="0" max="100" value="50" />
+                    <i class="fas fa-volume-up"></i>
+                </div>
+            </div>
+
+            <div id="wave" aria-hidden="true">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
